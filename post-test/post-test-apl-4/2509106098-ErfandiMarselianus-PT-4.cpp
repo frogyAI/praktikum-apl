@@ -54,45 +54,43 @@ void tampilkanBinatang(Binatang b, int nomor) {
     cout << "Umur    : " << b.umur << " tahun" << endl;
 }
 
-// ========== PENGGUNAAN ADDRESS-OF OPERATOR (&) SEBAGAI PARAMETER FUNGSI ==========
 void ubahUmurBinatang(Binatang &b, int umurBaru) {
-    cout << "\n[Address-of Operator] Alamat memori binatang: " << &b << endl;
+    cout << "\nAlamat memori binatang: " << &b << endl;
     cout << "Umur lama: " << b.umur << " tahun" << endl;
     b.umur = umurBaru;
     cout << "Umur baru: " << b.umur << " tahun" << endl;
 }
 
 void ubahHabitatBinatang(Binatang &b, char habitatBaru[]) {
-    cout << "\n[Address-of Operator] Alamat memori: " << &b << endl;
+    cout << "\nAlamat memori: " << &b << endl;
     cout << "Habitat lama: " << b.habitat << endl;
     strcpy(b.habitat, habitatBaru);
     cout << "Habitat baru: " << b.habitat << endl;
 }
 
 void tambahUmurBinatangRef(Binatang &b, int tahunTambah) {
-    cout << "\n[Address-of Operator] Menambah umur " << tahunTambah << " tahun" << endl;
+    cout << "\nMenambah umur " << tahunTambah << " tahun" << endl;
     cout << "Alamat memori: " << &b << endl;
     b.umur = b.umur + tahunTambah;
     cout << "Umur sekarang: " << b.umur << " tahun" << endl;
 }
 
-// ========== PENGGUNAAN DEREFERENCE OPERATOR (*) SEBAGAI PARAMETER FUNGSI ==========
 void gantiNamaBinatang(Binatang *b, char namaBaru[]) {
-    cout << "\n[Dereference Operator] Alamat memori yang ditunjuk: " << b << endl;
+    cout << "\nAlamat memori yang ditunjuk: " << b << endl;
     cout << "Nama lama: " << (*b).nama << endl;
     strcpy(b->nama, namaBaru);
     cout << "Nama baru: " << b->nama << endl;
 }
 
 void gantiJenisBinatang(Binatang *b, char jenisBaru[]) {
-    cout << "\n[Dereference Operator] Alamat memori: " << b << endl;
+    cout << "\nAlamat memori: " << b << endl;
     cout << "Jenis lama: " << (*b).jenis << endl;
     strcpy((*b).jenis, jenisBaru);
     cout << "Jenis baru: " << b->jenis << endl;
 }
 
 void kurangiUmurBinatang(Binatang *b, int tahunKurang) {
-    cout << "\n[Dereference Operator] Mengurangi umur " << tahunKurang << " tahun" << endl;
+    cout << "\nMengurangi umur " << tahunKurang << " tahun" << endl;
     cout << "Alamat memori: " << b << endl;
     cout << "Umur lama: " << b->umur << " tahun" << endl;
     b->umur = b->umur - tahunKurang;
@@ -100,7 +98,7 @@ void kurangiUmurBinatang(Binatang *b, int tahunKurang) {
 }
 
 void tukarPosisiBinatang(Binatang *binatang1, Binatang *binatang2) {
-    cout << "\n[Dereference Operator] Menukar posisi binatang" << endl;
+    cout << "\nMenukar posisi binatang" << endl;
     cout << "Alamat binatang1: " << binatang1 << endl;
     cout << "Alamat binatang2: " << binatang2 << endl;
     
@@ -117,10 +115,8 @@ void hitungRataRataUmur(Binatang *arr, int jumlah, float *hasil) {
         total += (arr + i)->umur;
     }
     *hasil = (float)total / jumlah;
-    cout << "\n[Dereference Operator] Rata-rata umur: " << *hasil << " tahun" << endl;
+    cout << "\nRata-rata umur: " << *hasil << " tahun" << endl;
 }
-
-// ============================================================
 
 void registrasi(Akun *user) {
     tampilkanHeader("REGISTRASI");
@@ -207,7 +203,7 @@ void ubahBinatang(Binatang kebunBinatang[], int banyak) {
     if(banyak > 0) {
         int index;
         tampilkanHeader("UBAH DATA BINATANG");
-        cout << "Masukkan nomor binatang yang akan diubah (1-" << banyak << "): ";
+        cout << "\nMasukkan nomor binatang yang akan diubah (1-" << banyak << "): ";
         cin >> index;
         
         if(index >= 1 && index <= banyak) {
@@ -220,19 +216,19 @@ void ubahBinatang(Binatang kebunBinatang[], int banyak) {
             cout << "Nama binatang (" << b.nama << "): ";
             cin >> b.nama;
             
-            cout << "Jenis (" << b.jenis << "): ";
+            cout << "\nJenis (" << b.jenis << "): ";
             cin >> b.jenis;
             
-            cout << "Habitat (" << b.habitat << "): ";
+            cout << "\nHabitat (" << b.habitat << "): ";
             cin >> b.habitat;
             
-            cout << "Umur (" << b.umur << " tahun): ";
+            cout << "\nUmur (" << b.umur << " tahun): ";
             cin >> b.umur;
             
             cout << "\nData binatang berhasil diubah!" << endl;
             tampilkanBinatang(b, index);
         } else {
-            cout << "Nomor tidak valid!" << endl;
+            cout << "\nNomor tidak valid!" << endl;
         }
     } else {
         cout << "\nTidak ada data binatang untuk diubah." << endl;
@@ -259,9 +255,9 @@ void hapusBinatang(Binatang kebunBinatang[], int *banyak) {
                     kebunBinatang[i] = kebunBinatang[i+1];
                 }
                 (*banyak)--;
-                cout << "Binatang berhasil dihapus!" << endl;
+                cout << "\nBinatang berhasil dihapus!" << endl;
             } else {
-                cout << "Penghapusan dibatalkan." << endl;
+                cout << "\nPenghapusan dibatalkan." << endl;
             }
         } else {
             cout << "Nomor tidak valid!" << endl;
